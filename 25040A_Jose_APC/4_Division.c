@@ -13,13 +13,19 @@ void Division(char*argv[], apc_digit* head1, apc_digit* tail1, apc_digit* head2,
         printf("Error: Division with zero\n");
         return;
     }
-    else if(strcmp(argv[1],"0") == 0)
+    else if(strcmp(argv[1],"0") == 0)           //If the numerator is zero, then the result is zero.
+    {
+        printf("Result is: 0\n");
+        return;
+    }
+
+    else if(compare_lists(head1, tail1, head2, tail2) == LIST_2_GREATER)        //If the denominator is greater than numerator, result is zero.
     {
         printf("Result is: 0\n");
         return;
     }
     
-    else if(strcmp(argv[1], argv[3]) == 0)
+    else if(strcmp(argv[1], argv[3]) == 0)          //If numerator and denominator are equal, then the result is one.
     {
         printf("Result is: 1\n");
         return;
